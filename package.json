@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/besrabasant/bing-scrape/issues"
   },
-  "homepage": "https://github.com/besrabasant/bing-scrape#readme"
+  "homepage": "https://github.com/besrabasant/bing-scrape#readme",
+  "dependencies": {
+    "async": "^1.4.2",
+    "jquerygo": "0.0.16"
+  }
 }
