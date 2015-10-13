@@ -18,6 +18,8 @@
   "homepage": "https://github.com/besrabasant/bing-scrape#readme",
   "dependencies": {
     "async": "^1.4.2",
-    "jquerygo": "0.0.16"
+    "fs": "0.0.2",
+    "jquerygo": "0.0.16",
+    "request": "^2.65.0"
   }
 }
