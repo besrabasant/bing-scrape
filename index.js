@@ -3,9 +3,10 @@ var $ = require('jquerygo');
 var request = require('request');
 var fs = require('fs');
 var path = require('path');
+var moment = require('moment');
 
 $.config.addJQuery = true;
-var url='', write_path = 'D:\Walls\\Bing';
+var url='',date, write_path = 'D:\Walls\\Bing';
 
 async.series([
 	$.go('visit','http://www.bing.com'),
@@ -21,12 +22,13 @@ async.series([
 	function(done){
 		url = url.substring(4,url.length-1);
 		done();
+	},
+	function(done){
+		date = moment(new Date()).format("YYYY-MM-DD");
+		done();
 	}
 ], function(){
-	console.log(url);
-
-	var filename = path.basename(url);
+	var filename = "BingWallpaper-"+date+".jpg";
 	request(url).pipe(fs.createWriteStream(write_path+'\\'+filename));
-	
 	$.close();		
 });
